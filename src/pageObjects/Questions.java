@@ -13,10 +13,7 @@ public class Questions
 
 	public static WebElement pquestions(WebDriver driver) throws InterruptedException
 	{
-		/*
-		    WebElement askQ = driver.findElement(By.xpath("//a[@data-target='#askQuestion']"));
-		    askQ.click();
-		 */   
+		   
 		    WebElement askQ = driver.findElement(By.xpath("//a[@data-action='ask-question']"));
 		    askQ.click();
 		    
@@ -47,15 +44,11 @@ public class Questions
 			
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 			
-	//		driver.findElement(By.xpath("html/body/div[2]/div/div/form/div[1]/div[2]/ul/li[3]/a/strong")).click();
+
 			driver.findElement(By.xpath("html/body/div[3]/div/div/form/div[1]/div[2]/ul/li[1]/a")).click();
 			
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-			/*
-			driver.findElement(By.xpath("html/body/div[2]/div/div/div/p")).click();
 			
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-			*/
 			WebElement Submit = driver.findElement(By.xpath("//button[@type='submit']"));
 			Submit.click();
 		
@@ -69,44 +62,27 @@ public class Questions
 		       {
 		         System.out.println("\033[32;1;2mtrue");
 		         System.out.println("\033[32;1;2mSuccess Message\033[0m ---> " + erromsg.getText());
-/*
-		       }
-		       else
-		       {
-		        
-		    	System.out.println("false");
-		        System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
-		        }
-			
-*/			
+		
 			Thread.sleep(1000);
 			
 		    act.keyUp(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
-	/*
-		    String WindowHandl = driver.getWindowHandle();
-		    driver.switchTo().window(WindowHandl);
-	*/
+
 		    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		    
 		    WebElement Verify = driver.findElement(By.xpath("//h4[@class='question-title']"));
 		    System.out.println(Verify.getText());
 		    
 		    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-	/*	    
-		    String WindowHandl = driver.getWindowHandle();
-		    driver.switchTo().window(WindowHandl);
-	*/	    
-		    
+    
 		       }
 		       else
 		       {
 		        
 		    	System.out.println("\033[31;1mfalse\033[0m");
 		        System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
+		      
 		        
-		        driver.close();
-		        
-		        driver.navigate().to("http://www.edunuts.com/discussions");
+		       driver.navigate().to("http://www.edunuts.com/discussions");
 		        
 		       }
 		    
