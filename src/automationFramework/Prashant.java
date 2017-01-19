@@ -1,5 +1,6 @@
 package automationFramework;
 //Prashant Pawase
+//Started Using GitHub
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -109,6 +110,9 @@ public class Prashant
 		System.out.println("Logout Success");
 		
 		System.out.println(driver.getTitle());
+		
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		
 		
 		driver.close();
 	}
